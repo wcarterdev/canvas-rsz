@@ -4,6 +4,8 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
+c.fillStyle="#ff6f69";
+c.fillRect(0,0,canvas.width, canvas.height);
 
 /*c.fillStyle = 'rgba(255, 0, 0, 0.5)';
 c.fillRect(100, 100, 100, 100);
@@ -37,7 +39,7 @@ c.stroke();*/
 
 
 
-function Circle(x, y, r, dx, dy) 
+function Circle(x, y, r, dx, dy)
 {
 	this.x = x;
 	this.y = y;
@@ -48,7 +50,7 @@ function Circle(x, y, r, dx, dy)
 	this.draw = function() {
 		c.beginPath();
 		c.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
-		c.strokeStyle = 'blue';
+		c.strokeStyle = '#FFC5C3';
 		c.fill();
 		c.stroke();
 	}
@@ -56,16 +58,16 @@ function Circle(x, y, r, dx, dy)
 	this.update = function() {
 		if (this.x + this.r > innerWidth || (this.x - this.r) < 0) {
 			this.dx = -this.dx;
-		} 
+		}
 
 		if (this.y + this.r > innerHeight || (this.y - this.r) < 0) {
 			this.dy = -this.dy
 		}
 
 		this.x += this.dx;
-		this.y += this.dy;	
+		this.y += this.dy;
 
-		this.draw();		
+		this.draw();
 	}
 }
 
@@ -86,7 +88,7 @@ for (var i = 0; i < 100; i++) {
 console.log(circleArray);
 
 
-function animate() 
+function animate()
 {
 	requestAnimationFrame(animate);
 	c.clearRect(0, 0, innerWidth, innerHeight);
@@ -97,12 +99,3 @@ function animate()
 }
 
 animate();
-
-
-
-
-
-
-
-
-
